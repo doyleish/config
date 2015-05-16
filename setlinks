@@ -1,0 +1,3 @@
+#!/bin/bash
+ln vim $HOME/.vimrc
+ln tmux $HOME/.tmux.conf
