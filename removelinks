@@ -1,3 +1,4 @@
 #!/bin/bash
 rm $HOME/.vimrc
 rm $HOME/.tmux.conf
+rm $HOME/.bashrc
