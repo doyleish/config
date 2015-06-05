@@ -2,12 +2,15 @@
 
 ## set up path 
 mkdir -p $HOME/programs/bin
+mkdir -p $HOME/.irssi
 
 ## link up config
 ln -sf $HOME/config/cfg_files/vim $HOME/.vimrc
 ln -sf $HOME/config/cfg_files/tmux $HOME/.tmux.conf
 ln -sf $HOME/config/cfg_files/bashrc $HOME/.bashrc
 ln -sf $HOME/config/cfg_files/cd-list $HOME/programs/bin/cdd
+LN -sf $HOME/config/cfg_files/irssi $HOME/.irssi/config
+
 
 #maybe scrape /programs for executables to link to unified bin
 
