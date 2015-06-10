@@ -18,7 +18,7 @@
 servers = (
   {
     address = "irc.corp.linkedin.com";
-    chatnet = "LinkedIn IRC";
+    chatnet = "LinkedIn";
     port = "6667";
     autoconnect = "Yes";
   },
@@ -36,8 +36,9 @@ servers = (
 # I don't know if BitlBee is to be trusted as a service visible to the entire internets.
 
 channels = (
-  { name = "#ms-sre"; chatnet = "MS-SRE"; autojoin = "Yes"; },
-  { name = "#informed"; chatnet = "InFormed"; autojoin = "No"; }
+  { name = "#ms-sre"; chatnet = "LinkedIn"; autojoin = "Yes"; },
+  { name = "#sre"; chatnet = "LinkedIn"; autojoin = "Yes"; }
+  { name = "#informed"; chatnet = "LinkedIn"; autojoin = "Yes"; }
 );
 
 #THIS PART DEFINES COMMAND ALIASES
@@ -58,7 +59,7 @@ aliases = {
   WI = "whois";
   WII = "whois $0 $0";
   WW = "whowas";
-  W = "who";
+  W = "window";
   N = "names";
   M = "msg";
   T = "topic";
@@ -200,4 +201,9 @@ hilights = (
 # run /layout save and /save. Your window layout will be added to the end of this 
 # file by irssi.
 # kthxbye
-chatnets = { "LinkedIn IRC" = { type = "IRC"; }; };
+chatnets = { 
+  "LinkedIn" = {
+    type = "IRC";
+	autosendcmd = "/^msg nickserv IDENTIFY kittens;wait 2000"
+  };
+};
