@@ -37,8 +37,8 @@ servers = (
 
 channels = (
   { name = "#ms-sre"; chatnet = "LinkedIn"; autojoin = "Yes"; },
-  { name = "#sre"; chatnet = "LinkedIn"; autojoin = "Yes"; }
-  { name = "#informed"; chatnet = "LinkedIn"; autojoin = "Yes"; }
+  { name = "#sre"; chatnet = "LinkedIn"; autojoin = "Yes"; },
+  #{ name = "#informed"; chatnet = "LinkedIn"; autojoin = "Yes"; }
 );
 
 #THIS PART DEFINES COMMAND ALIASES
@@ -201,9 +201,10 @@ hilights = (
 # run /layout save and /save. Your window layout will be added to the end of this 
 # file by irssi.
 # kthxbye
-chatnets = { 
-  "LinkedIn" = {
+chatnets = {
+  LinkedIn = {
     type = "IRC";
-	autosendcmd = "/^msg nickserv IDENTIFY kittens;wait 2000"
+    autosendcmd = "/^msg nickserv IDENTIFY kittens;wait 2000";
   };
 };
+ignores = ( { mask = "JOINS"; level = "PARTS QUITS"; } );
