@@ -2,5 +2,6 @@
 rm $HOME/.vimrc
 rm $HOME/.tmux.conf
 rm $HOME/.bashrc
+rm $HOME/.bash_profile
 rm $HOME/.irssi/config
 rm $HOME/programs/cdd
