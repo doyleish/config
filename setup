@@ -11,6 +11,7 @@ ln -sf $HOME/config/cfg_files/bashrc $HOME/.bashrc
 ln -sf $HOME/config/cfg_files/bash_profile $HOME/.bash_profile
 ln -sf $HOME/config/cfg_files/cd-list $HOME/programs/bin/cdd
 ln -sf $HOME/config/cfg_files/irssi $HOME/.irssi/config
+ln -sf $HOME/config/cfg_files/gitconfig $HOME/.gitconfig
 
 
 #maybe scrape /programs for executables to link to unified bin
