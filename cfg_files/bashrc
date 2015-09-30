@@ -2,6 +2,6 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 ####### end def. 
-alias ls="ls --color=auto"
+# alias ls="ls --color=auto"
 export PATH=$HOME/programs/bin:$PATH
 
