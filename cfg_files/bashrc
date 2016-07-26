@@ -10,6 +10,6 @@ fi
 export PATH=$HOME/programs/bin:$PATH
 
 
-export PATH=$PATH:/home/rcdoyle/programs/grails-2.4.5/bin
-export GRAILS_HOME=/home/rcdoyle/programs/grails-2.4.5
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/
+# export PATH=$PATH:/home/rcdoyle/programs/grails-2.4.5/bin
+# export GRAILS_HOME=/home/rcdoyle/programs/grails-2.4.5
+# export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/
