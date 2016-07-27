@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 
 ## set up path 
 mkdir -p $HOME/programs/bin
@@ -10,7 +10,7 @@ mkdir -p $HOME/.Trash
 ln -sf $HOME/config/cfg_files/vim $HOME/.vimrc
 ln -sf $HOME/config/cfg_files/tmux $HOME/.tmux.conf
 # ln -sf $HOME/config/cfg_files/irssi $HOME/.irssi/config
-# ln -sf $HOME/config/cfg_files/gitconfig $HOME/.gitconfig
+ln -sf $HOME/config/cfg_files/gitconfig $HOME/.gitconfig
 
 # link up bash
 ln -sf $HOME/config/cfg_files/bashrc $HOME/.bashrc
