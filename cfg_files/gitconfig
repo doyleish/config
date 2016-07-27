@@ -1,3 +1,5 @@
 [user]
 	email = rcdoyle@mtu.edu
 	name = Ryan Doyle
+[push]
+	default = simple
