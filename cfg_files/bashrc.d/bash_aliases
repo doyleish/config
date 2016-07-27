@@ -1,0 +1,7 @@
+#rm="mv $HOME/.Trash"
+
+if [ `uname | grep Darwin | wc -l` == 0 ]; then
+    alias ls="ls --color=auto"
+else
+    alias ls="ls -G"
+fi

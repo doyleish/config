@@ -1,15 +1,7 @@
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
-####### end def. 
-if [ `uname | grep Darwin | wc -l` == 0 ]; then
-    alias ls="ls --color=auto"
-else
-    alias ls="ls -G"
-fi
-export PATH=$HOME/programs/bin:$PATH
 
-
-# export PATH=$PATH:/home/rcdoyle/programs/grails-2.4.5/bin
-# export GRAILS_HOME=/home/rcdoyle/programs/grails-2.4.5
-# export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/
+for file in $HOME/.bashrc.d/*; do
+    . $file
+done
