@@ -1,5 +1,6 @@
-#rm="mv $HOME/.Trash"
+#alias rm="mv $HOME/.Trash"
 
+#BSD ls is much simpler...
 if [ `uname | grep Linux | wc -l` == 0 ]; then
     alias ls="ls -G"
 else
