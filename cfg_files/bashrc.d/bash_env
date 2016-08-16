@@ -11,7 +11,7 @@ green=$(tput setaf 2)
 cyan=$(tput setaf 6)
 reset=$(tput sgr0)
 
-export PS1="$cyan[\A]$reset $green\$(ps1_gbranch)$reset\u@\h $> "
+export PS1="\[$cyan\][\A]\[$reset\] \[$green\]\$(ps1_gbranch)\[$reset\]\u@\h $> "
 
 
 # export PATH=$PATH:/home/rcdoyle/programs/grails-2.4.5/bin
