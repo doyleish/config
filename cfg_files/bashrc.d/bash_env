@@ -1,12 +1,9 @@
 export PATH=$HOME/programs/bin:$PATH
 
 function ps1_gbranch {
-   # if [ `uname | grep Linux | wc -l` == 0 ]; then
-   # fi
-
-    status=$(git status 2> /dev/null | egrep -m 1 "Changes not staged for commit|Changes to be committed" | gsed -e 's|.\+|*|')
+    status=$(git status 2> /dev/null | egrep -m 1 "Changes not staged for commit|Changes to be committed" | sed -e 's|.\+|*|')
     gbranch=$(git branch 2> /dev/null | cut -d' ' -f2)
-    echo "$status$gbranch$status" | gsed -e 's|\(.\+\)|(\1)\ |'
+    echo "$status$gbranch$status" | sed -e 's|\(.\+\)|(\1)\ |'
 }
     
 green=$(tput setaf 2)
