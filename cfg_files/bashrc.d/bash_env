@@ -12,6 +12,8 @@ reset=$(tput sgr0)
 
 export PS1="\[$cyan\][\A]\[$reset\] \[$green\]\$(ps1_gbranch)\[$reset\]\u@\h $> "
 
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/include
+
 
 # export PATH=$PATH:/home/rcdoyle/programs/grails-2.4.5/bin
 # export GRAILS_HOME=/home/rcdoyle/programs/grails-2.4.5
