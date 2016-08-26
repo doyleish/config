@@ -21,7 +21,7 @@ function ps1_git_color {
         tput setaf 3
     elif [ $(echo $status | egrep -c -m 1 "Untracked files") -lt 1 ]; then
         tput setaf 4
-    elif [ $(echo $status | egrep -c -m 1 "working directory clean") -lt 1 ]; then
+    else
         tput setaf 2
     fi
     
