@@ -1,18 +1,48 @@
 export PATH=$HOME/programs/bin:$PATH
 
-function ps1_gbranch {
-    status=$(git status 2> /dev/null | egrep -m 1 "Untracked files|Changes not staged for commit|Changes to be committed" | sed -e 's|.\+|*|')
-    gbranch=$(git branch 2> /dev/null | cut -d' ' -f2)
-    echo "$status$gbranch$status" | sed -e 's|\(.\+\)|(\1)\ |'
-}
-    
 green=$(tput setaf 2)
 cyan=$(tput setaf 6)
 reset=$(tput sgr0)
 
-export PS1="\[$cyan\][\A]\[$reset\] \[$green\]\$(ps1_gbranch)\[$reset\]\u@\h $> "
+function ps1_gbranch {
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/include
+    status=$(git status 2> /dev/null | egrep -m 1 "Changes not staged for commit|Changes to be committed" | sed -e 's|.\+|*|')
+    gbranch=$(git branch 2> /dev/null | cut -d' ' -f2)
+    echo "$status$gbranch$status" | sed -e 's|\(.\+\)|(\1)\ |'
+}
+
+function ps1_git_color {
+    status=$(git status 2> /dev/null)
+    if [ $(echo $status | egrep -c -m 1 "On branch") -lt 1 ]; then
+        exit
+    elif [ $(echo $status | egrep -c -m 1 "Changes not staged for commit") -lt 1 ]; then
+        tput setaf 3
+    elif [ $(echo $status | egrep -c -m 1 "Changes to be committed") -lt 1 ]; then
+        tput setaf 3
+    elif [ $(echo $status | egrep -c -m 1 "Untracked files") -lt 1 ]; then
+        tput setaf 4
+    elif [ $(echo $status | egrep -c -m 1 "working directory clean") -lt 1 ]; then
+        tput setaf 2
+    fi
+    
+}
+
+function ps1_currdir {
+    prefix="/"
+    current_dir=$(pwd)
+    suffix=$(echo $current_dir | rev | cut -d"/" -f1,2 | rev)
+    dirlevel=$(echo $current_dir | grep -o "/" | wc -l)
+    if [ $dirlevel -gt 2 ]; then
+        prefix="*/"
+    elif [ $dirlevel -eq 1 ]; then
+        prefix=""
+    fi
+
+    echo "$prefix$suffix"
+}
+
+# export PS1="\[$cyan\][\A]\[$reset\] \[$green\]\$(ps1_gbranch)\[$reset\]\u@\h \$(ps1_currdir) $> "
+export PS1="\[$cyan\][\A]\[$reset\] \u@\h \$(ps1_git_color)\$(ps1_currdir)\[$reset\] $> "
 
 
 # export PATH=$PATH:/home/rcdoyle/programs/grails-2.4.5/bin
