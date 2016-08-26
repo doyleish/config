@@ -15,11 +15,11 @@ function ps1_git_color {
     status=$(git status 2> /dev/null)
     if [ $(echo $status | egrep -c -m 1 "On branch") -lt 1 ]; then
         exit
-    elif [ $(echo $status | egrep -c -m 1 "Changes not staged for commit") -lt 1 ]; then
+    elif [ $(echo $status | egrep -c -m 1 "Changes not staged for commit") -eq 1 ]; then
         tput setaf 3
-    elif [ $(echo $status | egrep -c -m 1 "Changes to be committed") -lt 1 ]; then
+    elif [ $(echo $status | egrep -c -m 1 "Changes to be committed") -eq 1 ]; then
         tput setaf 3
-    elif [ $(echo $status | egrep -c -m 1 "Untracked files") -lt 1 ]; then
+    elif [ $(echo $status | egrep -c -m 1 "Untracked files") -eq 1 ]; then
         tput setaf 4
     else
         tput setaf 2
