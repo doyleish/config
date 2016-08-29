@@ -1,4 +1,5 @@
 export PATH=$HOME/programs/bin:$PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
 green=$(tput setaf 2)
 cyan=$(tput setaf 6)
@@ -44,7 +45,10 @@ function ps1_currdir {
 # export PS1="\[$cyan\][\A]\[$reset\] \[$green\]\$(ps1_gbranch)\[$reset\]\u@\h \$(ps1_currdir) $> "
 export PS1="\[$cyan\][\A]\[$reset\] \u@\h \$(ps1_git_color)\$(ps1_currdir)\[$reset\] $> "
 
+grailsversion="2.4.5"
 
-# export PATH=$PATH:/home/rcdoyle/programs/grails-2.4.5/bin
-# export GRAILS_HOME=/home/rcdoyle/programs/grails-2.4.5
+## GRAILS SETUP
+
+# export PATH=$PATH:/home/rcdoyle/programs/grails-$grailsversion/bin
+# export GRAILS_HOME=/home/rcdoyle/programs/grails-$grailsversion
 # export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/
