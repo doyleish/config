@@ -5,29 +5,6 @@ green=$(tput setaf 2)
 cyan=$(tput setaf 6)
 reset=$(tput sgr0)
 
-function ps1_gbranch {
-
-    status=$(git status 2> /dev/null | egrep -m 1 "Changes not staged for commit|Changes to be committed" | sed -e 's|.\+|*|')
-    gbranch=$(git branch 2> /dev/null | cut -d' ' -f2)
-    echo "$status$gbranch$status" | sed -e 's|\(.\+\)|(\1)\ |'
-}
-
-function ps1_git_color {
-    status=$(git status 2> /dev/null)
-    if [ $(echo $status | egrep -c -m 1 "On branch") -lt 1 ]; then
-        exit
-    elif [ $(echo $status | egrep -c -m 1 "Changes not staged for commit") -eq 1 ]; then
-        tput setaf 3
-    elif [ $(echo $status | egrep -c -m 1 "Changes to be committed") -eq 1 ]; then
-        tput setaf 3
-    elif [ $(echo $status | egrep -c -m 1 "Untracked files") -eq 1 ]; then
-        tput setaf 4
-    else
-        tput setaf 2
-    fi
-    
-}
-
 function ps1_currdir {
     prefix="/"
     current_dir=$(pwd)
@@ -42,8 +19,31 @@ function ps1_currdir {
     echo "$prefix$suffix"
 }
 
+function ps1_gbranch {
+
+    status=$(git status 2> /dev/null | egrep -m 1 "Changes not staged for commit|Changes to be committed" | sed -e 's|.\+|*|')
+    gbranch=$(git branch 2> /dev/null | cut -d' ' -f2)
+    echo "$status$gbranch$status" | sed -e 's|\(.\+\)|(\1)\ |'
+}
+
+function ps1_git_status {
+    
+    status=$(git status 2> /dev/null)
+    if [ $(echo $status | egrep -c -m 1 "On branch") -lt 1 ]; then
+        exit
+    elif [ $(echo $status | egrep -c -m 1 "Untracked files") -eq 1 ]; then
+        echo "?! "
+    elif [ $(echo $status | egrep -c -m 1 "Changes (not staged for commit|to be committed)") -eq 1 ]; then
+        echo "! "
+    else
+        echo $'\u2713 '
+    fi
+    
+}
+
+
 # export PS1="\[$cyan\][\A]\[$reset\] \[$green\]\$(ps1_gbranch)\[$reset\]\u@\h \$(ps1_currdir) $> "
-export PS1="\[$cyan\][\A]\[$reset\] \u@\h \$(ps1_git_color)\$(ps1_currdir)\[$reset\] $> "
+export PS1="\[$cyan\][\A]\[$reset\] \u@\h \$(ps1_git_status)\$(ps1_currdir) $> "
 
 grailsversion="2.4.5"
 
