@@ -36,7 +36,7 @@ function ps1_git_status {
     elif [ $(echo $status | egrep -c -m 1 "Changes (not staged for commit|to be committed)") -eq 1 ]; then
         echo "! "
     else
-        echo $'\u2713 '
+        echo "✔ "
     fi
     
 }
