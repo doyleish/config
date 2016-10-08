@@ -1,0 +1,11 @@
+export PATH=$HOME/programs/bin:$PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+
+
+grailsversion="2.4.5"
+
+## GRAILS SETUP
+
+# export PATH=$PATH:/home/rcdoyle/programs/grails-$grailsversion/bin
+# export GRAILS_HOME=/home/rcdoyle/programs/grails-$grailsversion
+# export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/
