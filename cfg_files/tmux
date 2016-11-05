@@ -1,3 +1,4 @@
 unbind C-b
 set -g prefix C-z
 bind C-z send-prefix
+bind * set-window-option synchronize-panes
