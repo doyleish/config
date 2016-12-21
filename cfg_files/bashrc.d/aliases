@@ -8,3 +8,5 @@ if [ `uname | grep Linux | wc -l` == 0 ]; then
 else
     alias ls="ls --color=auto"
 fi
+
+alias typewriter="tmux splitw -h -p 80 ; tmux splitw -h -p 25; tmux send-keys -t:.1 'vim -c Word' Enter; tmux select-pane -t:.1; clear"
