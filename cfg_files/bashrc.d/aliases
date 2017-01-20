@@ -9,4 +9,14 @@ else
     alias ls="ls --color=auto"
 fi
 
+#TMUX
 alias typewriter="tmux splitw -h -p 80 ; tmux splitw -h -p 25; tmux send-keys -t:.1 'vim -c Word' Enter; tmux clock; tmux select-pane -t:.1"
+
+alias tlist="tmux list-buffers"
+tpaste () {
+    if [ "$1" != "" ]; then
+        tmux show-buffer -b buffer`printf "%04d" $1` | pbcopy
+    else
+        tmux show-buffer | pbcopy
+    fi
+}
