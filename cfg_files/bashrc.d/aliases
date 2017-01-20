@@ -1,8 +1,8 @@
 #alias rm="mv $HOME/.Trash"
 alias json-pretty="python3 -m 'json.tool'"
 
-#BSD ls is much simpler...
 if [ `uname | grep Linux | wc -l` == 0 ]; then
+#BSD
     alias ls="ls -G"
     alias sed="gsed"
 else
@@ -12,7 +12,14 @@ fi
 #TMUX
 alias typewriter="tmux splitw -h -p 80 ; tmux splitw -h -p 25; tmux send-keys -t:.1 'vim -c Word' Enter; tmux clock; tmux select-pane -t:.1"
 
+#buffer control
 alias tlist="tmux list-buffers"
+alias tdel="tmux delete-buffer"
+
+tin () {
+    "tmux set-buffer '"'`cat - | sed -e 's|\"|\\\"|g'`'"'"
+}
+
 tpaste () {
     if [ "$1" != "" ]; then
         tmux show-buffer -b buffer`printf "%04d" $1` | pbcopy
@@ -20,3 +27,4 @@ tpaste () {
         tmux show-buffer | pbcopy
     fi
 }
+
