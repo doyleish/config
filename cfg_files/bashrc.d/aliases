@@ -10,9 +10,8 @@ else
 fi
 
 #TMUX
-alias typewriter="tmux splitw -h -p 80 ; tmux splitw -h -p 25; tmux send-keys -t:.1 'vim -c Word' Enter; tmux clock; tmux select-pane -t:.1"
 
-#buffer control
+#copy buffer control
 alias tlist="tmux list-buffers"
 alias tdel="tmux delete-buffer"
 
@@ -28,3 +27,6 @@ tpaste () {
     fi
 }
 
+#Vim workflow
+alias typewriter="tmux splitw -h -p 80 ; tmux splitw -h -p 25; tmux send-keys -t:.1 'vim -c Word' Enter; tmux clock; tmux select-pane -t:.1"
+alias scratch="x=`date +%F_%H%M%S`; touch ~/scratch/$x; ln -sf ~/scratch/last ~/scratch/$x; vim ~/scratch/last"

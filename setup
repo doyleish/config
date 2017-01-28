@@ -2,6 +2,7 @@
 
 ## set up path 
 mkdir -p $HOME/programs/bin
+mkdir -p $HOME/scratch
 mkdir -p $HOME/.bashrc.d
 mkdir -p $HOME/.Trash
 
