@@ -1,5 +1,1 @@
-# OSX bash install defaults homedir config to ~/.bash_profile.
-# This is for linux compat and consistent config accross
-if [ `uname` == "Darwin" ]; then
-  . ~/.bashrc
-fi
+. ~/.bashrc
