@@ -1,7 +1,6 @@
 export PATH=$HOME/programs/bin:$PATH
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
-
 grailsversion="2.4.5"
 
 ## GRAILS SETUP

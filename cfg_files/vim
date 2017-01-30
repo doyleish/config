@@ -12,11 +12,13 @@ imap /* /**/<left><left>
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red
 
-:command Word :setlocal linebreak | 
+command Word :setlocal linebreak | 
              \ setlocal wrap |
              \ setlocal noexpandtab |
              \ setlocal spell spelllang=en_us |
              \ set formatprg=par
+
+command DeleteTrailingWhitespace :%s/\s\+$//e
              
 syntax on
 

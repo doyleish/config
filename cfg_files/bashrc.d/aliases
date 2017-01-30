@@ -14,10 +14,7 @@ fi
 #copy buffer control
 alias tlist="tmux list-buffers"
 alias tdel="tmux delete-buffer"
-
-tin () {
-    "tmux set-buffer '"'`cat - | sed -e 's|\"|\\\"|g'`'"'"
-}
+alias tin='tmux set-buffer "`cat -`"'
 
 tpaste () {
     if [ "$1" != "" ]; then
