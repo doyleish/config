@@ -16,6 +16,12 @@ alias tlist="tmux list-buffers"
 alias tdel="tmux delete-buffer"
 alias tin='tmux set-buffer "`cat -`"'
 
+tclean () {
+    for x in `seq $1 $2`; do
+        tmux kill-window -t $x;
+    done;
+}
+
 tpaste () {
     if [ "$1" != "" ]; then
         tmux show-buffer -b buffer`printf "%04d" $1` | pbcopy
