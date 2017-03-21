@@ -33,3 +33,6 @@ tpaste () {
 #Vim workflow
 alias typewriter="tmux splitw -h -p 80 ; tmux splitw -h -p 25; tmux send-keys -t:.1 'vim -c Word' Enter; tmux clock; tmux select-pane -t:.1"
 alias scratch="x=\`date +%F_%H%M%S\`; touch ~/scratch/\$x; ln -sf ~/scratch/\$x ~/scratch/last; vim ~/scratch/last"
+
+#Random utils
+alias rand='python -c "import base64, os, sys; print(base64.b64encode(os.urandom(int(sys.argv[1])))[:int(sys.argv[1])] if len(sys.argv)>1 else \"You are fake news\")"'
