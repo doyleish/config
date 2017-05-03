@@ -29,9 +29,9 @@ function ps1_git_status {
     if [ $(echo $status | egrep -c -m 1 "On branch") -lt 1 ]; then
         exit
     elif [ $(echo $status | egrep -c -m 1 "Untracked files") -eq 1 ]; then
-        echo "?! "
+        echo "✘+ "
     elif [ $(echo $status | egrep -c -m 1 "Changes (not staged for commit|to be committed)") -eq 1 ]; then
-        echo "! "
+        echo "✘ "
     else
         echo "✔ "
     fi
