@@ -11,10 +11,10 @@ ln -sf $HOME/config/cfg_files/vim $HOME/.vimrc
 ln -sf $HOME/config/cfg_files/tmux $HOME/.tmux.conf
 ln -sf $HOME/config/cfg_files/gitconfig $HOME/.gitconfig
 
-# link up bash
+## link up bash
 ln -sf $HOME/config/cfg_files/bashrc $HOME/.bashrc
 ln -sf $HOME/config/cfg_files/bash_profile $HOME/.bash_profile
 ln -sf $HOME/config/cfg_files/bashrc.d/* $HOME/.bashrc.d/
 
-#maybe scrape /programs for executables to link to unified bin
-
+## misc
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim

@@ -1,7 +1,22 @@
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+
+" Plugins
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'airblade/vim-gitgutter'
+call vundle#end()
+
+filetype plugin indent on
+
+
+
 set nu
 set autoindent
 set smartindent
-"set relativenumber
 set expandtab
 set magic
 set tabstop=4
@@ -9,7 +24,7 @@ set shiftwidth=4
 au FileType javascript setl tabstop=2 shiftwidth=2
 " imap ( ()<left>
 " imap { {<return><return>}<up><tab>
-imap /* /**/<left><left>
+" imap /* /**/<left><left>
 
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red
