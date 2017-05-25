@@ -39,30 +39,29 @@ function ps1_git_status {
     
 }
 
-function ps1_status_clock {
+function ps1_exit {
     prev_exit=$?
-    new_time=`date +%H:%M`
     if [ $prev_exit -ne 0 ]; then
-        echo "$red[$prev_exit]$cyan[$new_time ${timer_show}s]$reset"
+        echo "[$prev_exit]"
     else
-        echo "$cyan[$new_time ${timer_show}s]$reset"
+        echo ""
     fi
 }
 
 ## Timing
-function timer_start {
+function ps1_timer_start {
   timer=${timer:-$SECONDS}
 }
 
-function timer_stop {
+function ps1_timer_stop {
   timer_show=$(($SECONDS - $timer))
   unset timer
 }
 
-trap 'timer_start' DEBUG
+trap 'ps1_timer_start' DEBUG
 
-PROMPT_COMMAND="timer_stop"
+PROMPT_COMMAND="ps1_timer_stop"
 
 # export PS1="\[$cyan\][\A]\[$reset\] \[$green\]\$(ps1_gbranch)\[$reset\]\u@\h \$(ps1_currdir) $> "
 # export PS1="\[$cyan\][\A]\[$reset\] \u@\h \$(ps1_git_status)\$(ps1_currdir) $> "
-export PS1="\$(ps1_status_clock) \u@\h \$(ps1_git_status)\$(ps1_currdir) $> "
+export PS1="\[$red\]\$(ps1_exit)\[$reset\]\[$cyan\][\A \${timer_show}s]\[$reset\] \u@\h \$(ps1_git_status)\$(ps1_currdir) $> "
