@@ -1,6 +1,7 @@
-green=$(tput setaf 2)
-cyan=$(tput setaf 6)
 red=$(tput setaf 1)
+green=$(tput setaf 2)
+yellow=$(tput setaf 3)
+cyan=$(tput setaf 6)
 reset=$(tput sgr0)
 
 function ps1_currdir {
@@ -48,20 +49,15 @@ function ps1_exit {
     fi
 }
 
-## Timing
-function ps1_timer_start {
-  timer=${timer:-$SECONDS}
+function ps1_go_env {
+    if [ -z "$GOPATH" ]; then
+        echo ""
+    else
+        output=$(echo $GOPATH | rev | cut -d'/' -f1 | rev)
+        echo "($output)"
+    fi
 }
-
-function ps1_timer_stop {
-  timer_show=$(($SECONDS - $timer))
-  unset timer
-}
-
-trap 'ps1_timer_start' DEBUG
-
-PROMPT_COMMAND="ps1_timer_stop"
 
 # export PS1="\[$cyan\][\A]\[$reset\] \[$green\]\$(ps1_gbranch)\[$reset\]\u@\h \$(ps1_currdir) $> "
 # export PS1="\[$cyan\][\A]\[$reset\] \u@\h \$(ps1_git_status)\$(ps1_currdir) $> "
-export PS1="\[$red\]\$(ps1_exit)\[$reset\]\[$cyan\][\A \${timer_show}s]\[$reset\] \u@\h \$(ps1_git_status)\$(ps1_currdir) $> "
+export PS1="\[$red\]\$(ps1_exit)\[$reset\]\[$yellow\]\$(ps1_go_env)\[$reset\]\[$cyan\][\A]\[$reset\] \u@\h \$(ps1_git_status)\$(ps1_currdir) $> "

@@ -39,5 +39,9 @@ qvenv () {
     source ~/venvs/$1/bin/activate
 }
 
+#Go workflow
+alias gohere='export GOPATH=`pwd`'
+alias goaway='unset GOPATH'
+
 #Random utils
 alias rand='python -c "import base64, os, sys; print(base64.b64encode(os.urandom(int(sys.argv[1])))[:int(sys.argv[1])] if len(sys.argv)>1 else \"You are fake news\")"'
