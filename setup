@@ -10,6 +10,7 @@ mkdir -p $HOME/.Trash
 ln -sf $HOME/config/cfg_files/vim $HOME/.vimrc
 ln -sf $HOME/config/cfg_files/tmux $HOME/.tmux.conf
 ln -sf $HOME/config/cfg_files/gitconfig $HOME/.gitconfig
+ln -sf $HOME/config/cfg_files/Xresources $HOME/.Xresources
 
 ## link up bash
 ln -sf $HOME/config/cfg_files/bashrc $HOME/.bashrc
