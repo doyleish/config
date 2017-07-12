@@ -12,6 +12,9 @@ ln -sf $HOME/config/cfg_files/tmux $HOME/.tmux.conf
 ln -sf $HOME/config/cfg_files/gitconfig $HOME/.gitconfig
 ln -sf $HOME/config/cfg_files/Xresources $HOME/.Xresources
 
+mkdir -p $HOME/.config/lxterminal
+ln -sf $HOME/config/cfg_files/lxterminal $HOME/.config/lxterminal/lxterminal.conf
+
 ## link up bash
 ln -sf $HOME/config/cfg_files/bashrc $HOME/.bashrc
 ln -sf $HOME/config/cfg_files/bash_profile $HOME/.bash_profile
