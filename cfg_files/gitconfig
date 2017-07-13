@@ -3,3 +3,5 @@
 	name = Ryan Doyle
 [push]
 	default = simple
+[core]
+	editor = vim

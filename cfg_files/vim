@@ -8,6 +8,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'chase/vim-ansible-yaml'
 call vundle#end()
 
 filetype plugin indent on
