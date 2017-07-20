@@ -3,6 +3,8 @@
 xterm*faceName: Droid Sans Mono
 xterm*faceSize: 14
 
+URxvt*font: xft:Monospace:pixelsize=14
+
 ! UTF-8 Support
 
 xterm*locale: true
