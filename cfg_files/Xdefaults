@@ -1,10 +1,16 @@
 ! Font
 
-xterm*faceName: Droid Sans Mono
-xterm*faceSize: 14
+! xterm*faceName: Droid Sans Mono
+! xterm*faceSize: 15
 
-URxvt*font: xft:Monospace:pixelsize=14
+URxvt.font: xft:Droid Sans Mono:pixelsize=28:Regular
+URxvt.boldFont: xft:Droid Sans Mono:pixelsize=28:Bold
+URxvt.italicFont: xft:Droid Sans Mono:pixelsize=28:Italic
+URxvt.boldItalic: xft:Droid Sans Mono:pixelsize=28:BoldItalic
 
+URxvt.letterSpace: -2
+
+URxvt.scrollBar: false
 ! UTF-8 Support
 
 xterm*locale: true
