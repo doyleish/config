@@ -8,7 +8,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'chase/vim-ansible-yaml'
+" Plugin 'chase/vim-ansible-yaml'
 call vundle#end()
 
 filetype plugin indent on
@@ -40,3 +40,13 @@ command DeleteTrailingWhitespace :%s/\s\+$//e
              
 syntax on
 
+
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
