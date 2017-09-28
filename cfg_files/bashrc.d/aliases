@@ -10,6 +10,14 @@ else
 fi
 
 #TMUX
+ssh-landing ()
+{
+    if [ $(tmux ls | grep -v detached | grep -c misc) -gt 0 ]; then
+        tmux a -t misc;
+    else
+        tmux new-session -s misc;
+    fi
+}
 
 #copy buffer control
 alias tlist="tmux list-buffers"

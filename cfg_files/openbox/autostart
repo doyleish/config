@@ -1,0 +1,4 @@
+xinput set-prop 8 282 1.2
+feh --bg-fill ~/Pictures/bg.jpg
+
+
