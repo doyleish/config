@@ -150,10 +150,10 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
   <margins>
-    <top>9</top>
-    <bottom>9</bottom>
-    <left>9</left>
-    <right>9</right>
+    <top>0</top>
+    <bottom>0</bottom>
+    <left>0</left>
+    <right>0</right>
   </margins>
   <dock>
     <position>Top</position>
@@ -312,6 +312,27 @@
         <direction>down</direction>
       </action>
     </keybind>
+    <!-- Keybindings for Window Movement -->
+    <keybind key="W-Left">
+      <action name="MoveToEdge">
+        <direction>west</direction>
+      </action>
+    </keybind>
+    <keybind key="W-Down">
+      <action name="MoveToEdge">
+        <direction>south</direction>
+      </action>
+    </keybind>
+    <keybind key="W-Right">
+      <action name="MoveToEdge">
+        <direction>east</direction>
+      </action>
+    </keybind>
+    <keybind key="W-Up">
+      <action name="MoveToEdge">
+        <direction>north</direction>
+      </action>
+    </keybind>
     <!-- Keybindings for running applications -->
     <keybind key="W-t">
       <action name="Execute">
@@ -403,6 +424,7 @@
       <mousebind button="Left" action="DoubleClick">
         <action name="ToggleMaximize"/>
       </mousebind>
+      <!--
       <mousebind button="Up" action="Click">
         <action name="if">
           <shaded>no</shaded>
@@ -423,6 +445,7 @@
           </then>
         </action>
       </mousebind>
+      -->
     </context>
     <context name="Titlebar Top Right Bottom Left TLCorner TRCorner BRCorner BLCorner">
       <mousebind button="Left" action="Press">
