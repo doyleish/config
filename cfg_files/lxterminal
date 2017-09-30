@@ -1,16 +1,16 @@
 [general]
-fontname=Droid Sans Mono 13
+fontname=Droid Sans Mono 14
 selchars=-A-Za-z0-9,./?%&#:_
 scrollback=1000
 bgcolor=#0fa8381c4271
 bgalpha=65535
-fgcolor=#eeeee8e8d5d5
+fgcolor=#d46cce2dba6a
 palette_color_0=#070736364242
 palette_color_1=#d85f30ba2dc4
 palette_color_2=#79cec21a3182
 palette_color_3=#eadab79c180d
 palette_color_4=#26268b8bd2d2
-palette_color_5=#ffff45ae9fde
+palette_color_5=#eba2415a93c7
 palette_color_6=#52b6cd12c3d1
 palette_color_7=#e306e0e5da2a
 palette_color_8=#00002b2b3636

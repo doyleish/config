@@ -14,7 +14,7 @@ apt-get update
 # update tlp for battery gains
 # install dkms, build tools, headers
 # install wifi firmware
-apt-get install -y build-essential make gcc tmux dkms tlp tp-smapi-dkms acpi-call firmware-iwlwifi apt-file mesa-utils linux-headers-$(uname -r|sed 's,[^-]*-[^-]*-,,')
+apt-get install -y lxterminal build-essential make gcc tmux dkms tlp tp-smapi-dkms acpi-call firmware-iwlwifi apt-file mesa-utils linux-headers-$(uname -r|sed 's,[^-]*-[^-]*-,,')
 
 # build/install nvidia-driver
 apt-get install -y nvidia-driver
