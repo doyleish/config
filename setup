@@ -15,10 +15,14 @@ ln -sf $HOME/config/cfg_files/Xdefaults $HOME/.Xdefaults
 mkdir -p $HOME/.config/lxterminal
 ln -sf $HOME/config/cfg_files/lxterminal $HOME/.config/lxterminal/lxterminal.conf
 
-
+## openbox
 mkdir -p $HOME/.config/openbox
 ln -sf $HOME/config/cfg_files/openbox/rc.xml $HOME/.config/openbox/rc.xml
 ln -sf $HOME/config/cfg_files/openbox/autostart $HOME/.config/openbox/autostart
+
+## i3 
+mkdir -p $HOME/.config/i3
+ln -sf $HOME/config/cfg_files/i3/config $HOME/.config/i3/config
 
 ## link up bash
 ln -sf $HOME/config/cfg_files/bashrc $HOME/.bashrc
