@@ -1,4 +1,9 @@
-export PATH=$HOME/programs/bin:$PATH
+# export NODE_PATH=$HOME/programs/node/lib/node_modules
+# export PATH=$HOME/programs/node/bin:$PATH
+
+export PATH=/happs/eztheater/bin:$PATH
+
+
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
 # GO SETUP
