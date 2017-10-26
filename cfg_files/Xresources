@@ -1,16 +1,10 @@
 ! Font
-
-! xterm*faceName: Droid Sans Mono
-! xterm*faceSize: 15
-
 UXTerm*faceName: DejaVu Sans Mono
-UXTerm*faceSize: 13
-! UXTerm*letterSpace: -2
+UXTerm*faceSize: 14
 UXTerm*scrollBar: false
 
 
 ! Solarized Colors
-
 #define S_base03        #002b36
 #define S_base02        #073642
 #define S_base01        #586e75
