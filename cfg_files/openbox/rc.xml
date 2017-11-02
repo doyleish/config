@@ -346,7 +346,7 @@
     </keybind>
     <keybind key="W-l">
       <action name="Execute">
-        <command>xlock</command>
+        <command>xlock -mode image -bitmap ~/Pictures/court.xbm</command>
       </action>
     </keybind>
   </keyboard>

@@ -22,6 +22,7 @@ set expandtab
 set magic
 set tabstop=4
 set shiftwidth=4
+au FileType html setl tabstop=2 shiftwidth=2
 au FileType javascript setl tabstop=2 shiftwidth=2
 au FileType json setl tabstop=2 shiftwidth=2
 " imap ( ()<left>

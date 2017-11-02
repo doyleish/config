@@ -1,63 +1,103 @@
 ! Font
 UXTerm*faceName: DejaVu Sans Mono
-UXTerm*faceSize: 14
+UXTerm*faceSize: 13
 UXTerm*scrollBar: false
 
 
 ! Solarized Colors
-#define S_base03        #002b36
-#define S_base02        #073642
-#define S_base01        #586e75
-#define S_base00        #657b83
-#define S_base0         #839496
-#define S_base1         #93a1a1
-#define S_base2         #eee8d5
-#define S_base3         #fdf6e3
-
-UXTerm*background:            S_base03
-UXTerm*foreground:            S_base0
-UXTerm*fadeColor:             S_base03
-UXTerm*cursorColor:           S_base1
-UXTerm*pointerColorBackground:S_base01
-UXTerm*pointerColorForeground:S_base1
-
-#define S_yellow        #b58900
-#define S_orange        #cb4b16
-#define S_red           #dc322f
-#define S_magenta       #d33682
-#define S_violet        #6c71c4
-#define S_blue          #268bd2
-#define S_cyan          #2aa198
-#define S_green         #859900
+UXTerm*background:            #002b36
+UXTerm*foreground:            #839496
+UXTerm*fadeColor:             #002b36
+UXTerm*cursorColor:           #93a1a1
+UXTerm*pointerColorBackground:#586e75
+UXTerm*pointerColorForeground:#93a1a1
 
 !! black dark/light
-UXTerm*color0:                S_base02
-UXTerm*color8:                S_base03
+UXTerm*color0:                #073642
+UXTerm*color8:                #002b36
 
 !! red dark/light
-UXTerm*color1:                S_red
-UXTerm*color9:                S_orange
+UXTerm*color1:                #dc322f
+UXTerm*color9:                #cb4b16
 
 !! green dark/light
-UXTerm*color2:                S_green
-UXTerm*color10:               S_base01
+UXTerm*color2:                #859900
+UXTerm*color10:               #586e75
 
 !! yellow dark/light
-UXTerm*color3:                S_yellow
-UXTerm*color11:               S_base00
+UXTerm*color3:                #b58900
+UXTerm*color11:               #657b83
 
 !! blue dark/light
-UXTerm*color4:                S_blue
-UXTerm*color12:               S_base0
+UXTerm*color4:                #268bd2
+UXTerm*color12:               #839496
 
 !! magenta dark/light
-UXTerm*color5:                S_magenta
-UXTerm*color13:               S_violet
+UXTerm*color5:                #d33682
+UXTerm*color13:               #6c71c4
 
 !! cyan dark/light
-UXTerm*color6:                S_cyan
-UXTerm*color14:               S_base1
+UXTerm*color6:                #2aa198
+UXTerm*color14:               #93a1a1
 
 !! white dark/light
-UXTerm*color7:                S_base2
-UXTerm*color15:               S_base3
+UXTerm*color7:                #eee8d5
+UXTerm*color15:               #fdf6e3
+
+
+! rxvt
+! Font
+URxvt.font: xft:DejaVu Sans Mono:size=13:antialias=true
+URxvt.boldFont: xft:DejaVu Sans Mono:bold::size=13:antialias=true
+URxvt.letterSpace: -1
+
+
+
+URxvt.scrollBar: false
+
+
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: firefox
+URxvt.matcher.button: 1
+URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&amp;@#-]*[\\w/-]
+
+
+! Solarized Colors
+URxvt*background:            #002b36
+URxvt*foreground:            #839496
+URxvt*fadeColor:             #002b36
+URxvt*cursorColor:           #93a1a1
+URxvt*pointerColorBackground:#586e75
+URxvt*pointerColorForeground:#93a1a1
+
+!! black dark/light
+URxvt*color0:                #073642
+URxvt*color8:                #002b36
+
+!! red dark/light
+URxvt*color1:                #dc322f
+URxvt*color9:                #cb4b16
+
+!! green dark/light
+URxvt*color2:                #859900
+URxvt*color10:               #586e75
+
+!! yellow dark/light
+URxvt*color3:                #b58900
+URxvt*color11:               #657b83
+
+!! blue dark/light
+URxvt*color4:                #268bd2
+URxvt*color12:               #839496
+
+!! magenta dark/light
+URxvt*color5:                #d33682
+URxvt*color13:               #6c71c4
+
+!! cyan dark/light
+URxvt*color6:                #2aa198
+URxvt*color14:               #93a1a1
+
+!! white dark/light
+URxvt*color7:                #eee8d5
+URxvt*color15:               #fdf6e3
