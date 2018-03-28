@@ -156,6 +156,7 @@ bar {
 }
 
 ### CUSTOM
+
 # Autostart
 exec feh --bg-fill ~/Pictures/bg.jpg
 exec nm-applet
@@ -164,3 +165,12 @@ exec mate-volume-control-applet
 # Bindings
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+
+bindsym XF86AudioRaiseVolume exec amixer sset Master 3+ 
+bindsym XF86AudioLowerVolume exec amixer sset Master 3-
+bindsym XF86Calculator exec urxvt -e "python3"
+
+bindsym $mod+x exec i3lock -t -i ~/Pictures/lock.png # lock
+bindsym $mod+Shift+x exec troll-lock
+
+bindsym --release $mod+g exec screengrab #scrot

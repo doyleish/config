@@ -33,6 +33,7 @@ hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red
 
 command Word :setlocal linebreak | 
+             \ set nu& |
              \ setlocal wrap |
              \ setlocal noexpandtab |
              \ setlocal spell spelllang=en_us |
