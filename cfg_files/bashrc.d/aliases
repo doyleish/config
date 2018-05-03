@@ -30,11 +30,11 @@ tclean () {
     done;
 }
 
-tpaste () {
+tout () {
     if [ "$1" != "" ]; then
-        tmux show-buffer -b buffer`printf "%04d" $1` | pbcopy
+        tmux show-buffer -b $1
     else
-        tmux show-buffer | pbcopy
+        tmux show-buffer
     fi
 }
  

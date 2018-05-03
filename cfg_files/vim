@@ -9,26 +9,35 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'fatih/vim-go'
+Plugin 'vim-syntastic/syntastic'
 call vundle#end()
 
 filetype plugin indent on
 
-
-
+" Base VIM options
 set nu
 set autoindent
-set smartindent
+" set smartindent
 set expandtab
 set magic
 set tabstop=4
 set shiftwidth=4
+
+" Folding
+set foldmethod=indent
+set foldlevel=99
+set foldenable
+
+" Filetype specifics
 au FileType html setl tabstop=2 shiftwidth=2
 au FileType javascript setl tabstop=2 shiftwidth=2
 au FileType json setl tabstop=2 shiftwidth=2
-" imap ( ()<left>
-" imap { {<return><return>}<up><tab>
-" imap /* /**/<left><left>
 
+" Remaps
+" Folding
+nnoremap <space> za
+
+" Word Proc mode
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red
 
@@ -40,10 +49,15 @@ command Word :setlocal linebreak |
              \ set formatprg=par
 
 command DeleteTrailingWhitespace :%s/\s\+$//e
-             
+
+
+" Syntax
+let python_highlight_all=1
 syntax on
+colorscheme elflord
 
 
+" Fucking hardmode
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
