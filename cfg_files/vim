@@ -32,6 +32,7 @@ set foldenable
 au FileType html setl tabstop=2 shiftwidth=2
 au FileType javascript setl tabstop=2 shiftwidth=2
 au FileType json setl tabstop=2 shiftwidth=2
+au FileType xml setl tabstop=2 shiftwidth=2
 
 " Remaps
 " Folding
@@ -54,7 +55,8 @@ command DeleteTrailingWhitespace :%s/\s\+$//e
 " Syntax
 let python_highlight_all=1
 syntax on
-colorscheme elflord
+set background=dark
+colorscheme solarized
 
 
 " Fucking hardmode

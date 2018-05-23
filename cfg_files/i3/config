@@ -157,6 +157,10 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightne
 
 bindsym XF86AudioRaiseVolume exec amixer sset Master 3+ 
 bindsym XF86AudioLowerVolume exec amixer sset Master 3-
+
+bindsym $mod+equal exec amixer sset Master 3+ 
+bindsym $mod+minus exec amixer sset Master 3-
+
 bindsym XF86Calculator exec urxvt -e "python3"
 
 bindsym $mod+x exec i3lock -t -i ~/Pictures/lock.png # lock
