@@ -1,32 +1,24 @@
-set nocompatible
+" Vundle Plugins
 filetype off
-
 set rtp+=~/.vim/bundle/Vundle.vim
-
-" Plugins
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'fatih/vim-go'
-Plugin 'vim-syntastic/syntastic'
+  Plugin 'VundleVim/Vundle.vim'
+  Plugin 'derekwyatt/vim-scala'
+  Plugin 'airblade/vim-gitgutter'
+  Plugin 'fatih/vim-go'
+  Plugin 'vim-syntastic/syntastic'
 call vundle#end()
-
 filetype plugin indent on
+
 
 " Base VIM options
 set nu
 set autoindent
-" set smartindent
 set expandtab
 set magic
 set tabstop=4
 set shiftwidth=4
 
-" Folding
-set foldmethod=indent
-set foldlevel=99
-set foldenable
 
 " Filetype specifics
 au FileType html setl tabstop=2 shiftwidth=2
@@ -34,14 +26,16 @@ au FileType javascript setl tabstop=2 shiftwidth=2
 au FileType json setl tabstop=2 shiftwidth=2
 au FileType xml setl tabstop=2 shiftwidth=2
 
-" Remaps
+
 " Folding
-nnoremap <space> za
+set foldmethod=indent
+set foldlevel=99
+set foldenable
+
 
 " Word Proc mode
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red
-
 command Word :setlocal linebreak | 
              \ set nu& |
              \ setlocal wrap |
@@ -49,22 +43,25 @@ command Word :setlocal linebreak |
              \ setlocal spell spelllang=en_us |
              \ set formatprg=par
 
+
+" Macros + Remaps
 command DeleteTrailingWhitespace :%s/\s\+$//e
+nnoremap <space> za
 
 
 " Syntax
 let python_highlight_all=1
 syntax on
 set background=dark
-colorscheme solarized
+" Let the rxvt colors do their thing
+" colorscheme solarized
 
 
-" Fucking hardmode
+" Hardmode
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 inoremap <Left> <NOP>

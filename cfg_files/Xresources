@@ -1,103 +1,49 @@
-! Font
-UXTerm*faceName: DejaVu Sans Mono
-UXTerm*faceSize: 13
-UXTerm*scrollBar: false
-
-
-! Solarized Colors
-UXTerm*background:            #002b36
-UXTerm*foreground:            #839496
-UXTerm*fadeColor:             #002b36
-UXTerm*cursorColor:           #93a1a1
-UXTerm*pointerColorBackground:#586e75
-UXTerm*pointerColorForeground:#93a1a1
-
-!! black dark/light
-UXTerm*color0:                #073642
-UXTerm*color8:                #002b36
-
-!! red dark/light
-UXTerm*color1:                #dc322f
-UXTerm*color9:                #cb4b16
-
-!! green dark/light
-UXTerm*color2:                #859900
-UXTerm*color10:               #586e75
-
-!! yellow dark/light
-UXTerm*color3:                #b58900
-UXTerm*color11:               #657b83
-
-!! blue dark/light
-UXTerm*color4:                #268bd2
-UXTerm*color12:               #839496
-
-!! magenta dark/light
-UXTerm*color5:                #d33682
-UXTerm*color13:               #6c71c4
-
-!! cyan dark/light
-UXTerm*color6:                #2aa198
-UXTerm*color14:               #93a1a1
-
-!! white dark/light
-UXTerm*color7:                #eee8d5
-UXTerm*color15:               #fdf6e3
-
-
 ! rxvt
 ! Font
 URxvt.font: xft:DejaVu Sans Mono:size=13:antialias=true
 URxvt.boldFont: xft:DejaVu Sans Mono:bold::size=13:antialias=true
 URxvt.letterSpace: -1
 
-
-
 URxvt.scrollBar: false
-
 
 URxvt.perl-ext-common: default,matcher
 URxvt.urlLauncher: firefox
 URxvt.matcher.button: 1
 URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&amp;@#-]*[\\w/-]
 
+! special
+*.foreground:   #c5c8c6
+*.background:   #1d1f21
+*.cursorColor:  #c5c8c6
 
-! Solarized Colors
-URxvt*background:            #002b36
-URxvt*foreground:            #839496
-URxvt*fadeColor:             #002b36
-URxvt*cursorColor:           #93a1a1
-URxvt*pointerColorBackground:#586e75
-URxvt*pointerColorForeground:#93a1a1
+! black
+*.color0:       #1d1f21
+*.color8:       #969896
 
-!! black dark/light
-URxvt*color0:                #073642
-URxvt*color8:                #002b36
+! red
+*.color1:       #cc342b
+*.color9:       #cc342b
 
-!! red dark/light
-URxvt*color1:                #dc322f
-URxvt*color9:                #cb4b16
+! green
+*.color2:       #198844
+*.color10:      #198844
 
-!! green dark/light
-URxvt*color2:                #859900
-URxvt*color10:               #586e75
+! yellow
+*.color3:       #fba922
+*.color11:      #fba922
 
-!! yellow dark/light
-URxvt*color3:                #b58900
-URxvt*color11:               #657b83
+! blue
+*.color4:       #3971ed
+*.color12:      #3971ed
 
-!! blue dark/light
-URxvt*color4:                #268bd2
-URxvt*color12:               #839496
+! magenta
+*.color5:       #a36ac7
+*.color13:      #a36ac7
 
-!! magenta dark/light
-URxvt*color5:                #d33682
-URxvt*color13:               #6c71c4
+! cyan
+*.color6:       #0f73fb
+*.color14:      #0f73fb
 
-!! cyan dark/light
-URxvt*color6:                #2aa198
-URxvt*color14:               #93a1a1
-
-!! white dark/light
-URxvt*color7:                #eee8d5
-URxvt*color15:               #fdf6e3
+! white
+*.color7:       #c5c8c6
+*.color15:      #ffffff
