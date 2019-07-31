@@ -6,28 +6,20 @@ mkdir -p $HOME/scratch
 mkdir -p $HOME/.bashrc.d
 mkdir -p $HOME/.Trash
 
-## link up config
-ln -sf $HOME/config/cfg_files/vim $HOME/.vimrc
-ln -sf $HOME/config/cfg_files/tmux $HOME/.tmux.conf
-ln -sf $HOME/config/cfg_files/gitconfig $HOME/.gitconfig
-ln -sf $HOME/config/cfg_files/Xresources $HOME/.Xresources
-
-mkdir -p $HOME/.config/lxterminal
-ln -sf $HOME/config/cfg_files/lxterminal $HOME/.config/lxterminal/lxterminal.conf
-
-## openbox
-mkdir -p $HOME/.config/openbox
-ln -sf $HOME/config/cfg_files/openbox/rc.xml $HOME/.config/openbox/rc.xml
-ln -sf $HOME/config/cfg_files/openbox/autostart $HOME/.config/openbox/autostart
+## link up dotfiles
+ln -sf $HOME/config/files/vim $HOME/.vimrc
+ln -sf $HOME/config/files/tmux $HOME/.tmux.conf
+ln -sf $HOME/config/files/gitconfig $HOME/.gitconfig
+ln -sf $HOME/config/files/Xresources $HOME/.Xresources
 
 ## i3 
 mkdir -p $HOME/.config/i3
-ln -sf $HOME/config/cfg_files/i3/config $HOME/.config/i3/config
+ln -sf $HOME/config/files/i3/config $HOME/.config/i3/config
 
-## link up bash
-ln -sf $HOME/config/cfg_files/bashrc $HOME/.bashrc
-ln -sf $HOME/config/cfg_files/bash_profile $HOME/.bash_profile
-ln -sf $HOME/config/cfg_files/bashrc.d/* $HOME/.bashrc.d/
+## bash
+ln -sf $HOME/config/files/bashrc $HOME/.bashrc
+ln -sf $HOME/config/files/bash_profile $HOME/.bash_profile
+ln -sf $HOME/config/files/bashrc.d/* $HOME/.bashrc.d/
 
-## misc
+## misc setup
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
