@@ -1,8 +1,7 @@
-#alias rm="mv $HOME/.Trash"
-alias json-pretty="python3 -m 'json.tool'"
+#!/bin/bash
 
-if [ `uname | grep Linux | wc -l` == 0 ]; then
-#BSD
+# prettylscolors
+if [ `uname | grep -c Linux` == 0 ]; then
     alias ls="ls -G"
     alias sed="gsed"
 else
@@ -44,7 +43,7 @@ alias cbout='xclip -out -selection clipboard'
 
 #Vim workflow
 alias typewriter="tmux splitw -h -p 80 ; tmux splitw -h -p 25; tmux send-keys -t:.1 'vim -c Word' Enter; tmux clock; tmux select-pane -t:.1"
-alias scratch="x=\`date +%F_%H%M%S\`; touch ~/scratch/\$x; ln -sf ~/scratch/\$x ~/scratch/last; vim ~/scratch/last"
+# alias scratch="x=\`date +%F_%H%M%S\`; touch ~/scratch/\$x; ln -sf ~/scratch/\$x ~/scratch/last; vim ~/scratch/last"
 
 #Python workflow
 qvenv () {
@@ -59,6 +58,7 @@ alias goaway='unset GOPATH'
 alias rand='python -c "import base64, os, sys; print(base64.b64encode(os.urandom(int(sys.argv[1])*3)).replace(\"+\",\"\").replace(\"/\",\"\")[:int(sys.argv[1])] if len(sys.argv)>1 else \"You are fake news\")"'
 alias breakdown='sort | uniq -c | sort -n'
 alias wotd='curl -s -L "https://www.merriam-webster.com/word-of-the-day"| grep "<h1>" | sed -e "s|.*<h1>\(.*\)</h1>.*|\1|"'
+alias castnow='castnow -ip chromeduck'
 
 screengrab () {
     filename=`date +%Y-%M-%d_%H:%M`.png
