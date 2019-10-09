@@ -6,18 +6,18 @@ URxvt.letterSpace: -1
 
 URxvt.scrollBar: false
 
-URxvt.perl-ext-common: default,matcher
-URxvt.urlLauncher: firefox
-URxvt.matcher.button: 1
-URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&amp;@#-]*[\\w/-]
+! URxvt.perl-ext-common: matcher,readline
+! URxvt.urlLauncher: firefox
+! URxvt.matcher.button: 1
+! URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&amp;@#-]*[\\w/-]
 
 ! special
 *.foreground:   #c5c8c6
-*.background:   #1d1f21
+*.background:   #232628
 *.cursorColor:  #c5c8c6
 
 ! black
-*.color0:       #1d1f21
+*.color0:       #232628
 *.color8:       #969896
 
 ! red

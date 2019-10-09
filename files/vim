@@ -25,6 +25,8 @@ au FileType html setl tabstop=2 shiftwidth=2
 au FileType javascript setl tabstop=2 shiftwidth=2
 au FileType json setl tabstop=2 shiftwidth=2
 au FileType xml setl tabstop=2 shiftwidth=2
+au FileType yaml setl tabstop=2 shiftwidth=2
+au BufNewFile,BufRead *.handlebars, *.hbs setl tabstop=2 shiftwidth=2 syntax=html
 
 
 " Folding
