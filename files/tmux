@@ -2,8 +2,8 @@ set-window-option -g mode-keys vi
 set -g history-limit 10240
 
 unbind C-b
-set -g prefix C-z
-bind C-z send-prefix
+set -g prefix C-a
+bind C-a send-prefix
 
 bind * set-window-option synchronize-panes
 
