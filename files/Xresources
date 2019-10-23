@@ -1,16 +1,15 @@
-! rxvt
+! urxvt
 ! Font
 URxvt.font: xft:DejaVu Sans Mono:size=13:antialias=true
 URxvt.boldFont: xft:DejaVu Sans Mono:bold::size=13:antialias=true
 URxvt.letterSpace: -1
 
+! Window Appearance
 URxvt.scrollBar: false
+URxvt.transparent: true
+URxvt.shading: 25
 
-! URxvt.perl-ext-common: matcher,readline
-! URxvt.urlLauncher: firefox
-! URxvt.matcher.button: 1
-! URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&amp;@#-]*[\\w/-]
-
+! Colors
 ! special
 *.foreground:   #c5c8c6
 *.background:   #232628

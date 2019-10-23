@@ -1,6 +1,22 @@
 set-window-option -g mode-keys vi
 set -g history-limit 10240
 
+set -g status-bg "colour245"
+set -g status-fg "black"
+set -g status-right-bg "black"
+set -g status-right-fg "white"
+set -g window-status-bg "white"
+set -g window-status-fg "black"
+set -g window-status-current-bg "red"
+set -g window-status-bell-bg "blue"
+set -g pane-border-fg "white"
+set -g pane-active-border-fg "red"
+set -g display-panes-colour "white"
+set -g display-panes-active-colour "red"
+set -g message-bg "white"
+set -g mode-bg "white"
+
+
 unbind C-b
 set -g prefix C-a
 bind C-a send-prefix
