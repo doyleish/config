@@ -60,6 +60,4 @@ function ps1_go_env {
     fi
 }
 
-# export PS1="\[$cyan\][\A]\[$reset\] \[$green\]\$(ps1_gbranch)\[$reset\]\u@\h \$(ps1_currdir) $> "
-# export PS1="\[$cyan\][\A]\[$reset\] \u@\h \$(ps1_git_status)\$(ps1_currdir) $> "
 export PS1="\[$red\]\$(ps1_exit)\[$reset\]\[$yellow\]\$(ps1_go_env)\[$reset\]\[$cyan\][\A]\[$reset\] \u@\h \$(ps1_git_status)\$(ps1_currdir) $> "
