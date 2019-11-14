@@ -1,0 +1,13 @@
+#!/bin/bash
+if [ "$EUID" -ne 0 ]; then
+    echo "Run me as root"
+    exit 1
+fi
+
+# update tlp for battery gains
+# install dkms, build tools, headers
+# install wifi firmware
+apt-get install -y throttled
+
+exit
+apt-get install -y rxvt-unicode build-essential make gcc tmux dkms tlp tp-smapi-dkms acpi-call firmware-iwlwifi apt-file mesa-utils linux-headers-$(uname -r|sed 's,[^-]*-[^-]*-,,')
