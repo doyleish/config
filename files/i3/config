@@ -149,21 +149,30 @@ bar {
 # Autostart
 exec --no-startup-id feh --bg-fill ~/Pictures/bg.jpg
 exec --no-startup-id nm-applet
+exec --no-startup-id volumeicon
+exec --no-startup-id xset -b
+exec --no-startup-id xset r rate 250 50
 #exec mate-volume-control-applet
 
 # Bindings
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10 # decrease screen brightness
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +3%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -3%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 26 +3%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 26 -3%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 26 toggle
+
+bindsym XF86Display exec --no-startup-id touch xrandr --auto # auto-set outputs
+bindsym $mod+XF86Display exec --no-startup-id touch xrandr --auto --output DP2 --above eDP1 # auto-set outputs
+
+bindsym XF86Calculator exec --no-startup-id urxvt -e "python3"
 
 #bindsym $mod+equal exec --no-startup-id amixer sset Master 3+
 #bindsym $mod+minus exec --no-startup-id amixer sset Master 3-
 
-bindsym XF86Calculator exec --no-startup-id urxvt -e "python3"
 
 bindsym $mod+x exec i3lock -t -i ~/Pictures/lock.png # lock
 bindsym $mod+Shift+x exec troll-lock
 
 bindsym --release $mod+g exec screengrab #scrot
+exec /usr/local/bin/_batterynag 10 60

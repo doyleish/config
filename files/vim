@@ -6,6 +6,8 @@ call vundle#begin()
   Plugin 'derekwyatt/vim-scala'
   Plugin 'airblade/vim-gitgutter'
   Plugin 'fatih/vim-go'
+  Plugin 'fatih/vim-hclfmt'
+  Plugin 'lifepillar/pgsql.vim'
   Plugin 'vim-syntastic/syntastic'
 call vundle#end()
 filetype plugin indent on

@@ -1,7 +1,8 @@
 export EDITOR=/usr/bin/vim
 
 export PATH=$PATH:/opt/go/bin
+export PATH=$PATH:/opt/hashicorp
 export PATH=$PATH:$HOME/programs/bin
 export PATH=$PATH:$HOME/scripts
 
-
+export VAULT_ADDR=https://vault.corp.gotimagine.com:8200

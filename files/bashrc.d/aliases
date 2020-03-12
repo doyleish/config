@@ -78,3 +78,13 @@ screengrab () {
     firefox $filepath/latest.png
 }
 # ====End====
+
+#Imagine utils
+# ===Start===
+vault-env () {
+    export VAULT_ADDR=https://vault.$1.gotimagine.com:8200
+}
+alias vault-ssh="vault ssh -mode otp -role default -strict-host-key-checking no"
+alias vault-login="vault login -method=aws region=us-west-2 role=admin-developer"
+alias vpn-connect="sudo /sbin/openvpn /etc/openvpn/client.ovpn"
+# ====End====
