@@ -87,4 +87,5 @@ vault-env () {
 alias vault-ssh="vault ssh -mode otp -role default -strict-host-key-checking no"
 alias vault-login="vault login -method=aws region=us-west-2 role=admin-developer"
 alias vpn-connect="sudo /sbin/openvpn /etc/openvpn/client.ovpn"
+alias i="/home/ryan/staging/infrastructure/scripts/i/i.sh"
 # ====End====

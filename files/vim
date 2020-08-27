@@ -9,6 +9,7 @@ call vundle#begin()
   Plugin 'fatih/vim-hclfmt'
   Plugin 'lifepillar/pgsql.vim'
   Plugin 'vim-syntastic/syntastic'
+  Plugin 'leafgarland/typescript-vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -20,6 +21,8 @@ set expandtab
 set magic
 set tabstop=4
 set shiftwidth=4
+set incsearch
+set hlsearch
 
 
 " Filetype specifics
@@ -54,14 +57,21 @@ nnoremap <space> za
 
 
 " Syntax
-let python_highlight_all=1
+" let python_highlight_all=1
 syntax on
 set background=dark
 " Let the rxvt colors do their thing
 " colorscheme solarized
 
 
-" Hardmode
+" Go
+set omnifunc=syntaxcomplete#Complete
+let g:go_auto_type_info = 1
+let g:go_auto_sameids = 1
+let g:go_updatetime = 400
+
+
+" No arrow key nav
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>

@@ -146,33 +146,36 @@ bar {
 
 ### CUSTOM
 
-# Autostart
-exec --no-startup-id feh --bg-fill ~/Pictures/bg.jpg
+## Autostart
+exec --no-startup-id feh --bg-fill ~/Pictures/bg.png
 exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
 exec --no-startup-id xset -b
 exec --no-startup-id xset r rate 250 50
-#exec mate-volume-control-applet
 
-# Bindings
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10 # decrease screen brightness
+## Bindings
+# Brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 26 +3%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 26 -3%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 26 toggle
+# Audio
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +3%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -3%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-bindsym XF86Display exec --no-startup-id touch xrandr --auto # auto-set outputs
-bindsym $mod+XF86Display exec --no-startup-id touch xrandr --auto --output DP2 --above eDP1 # auto-set outputs
+# Display
+bindsym XF86Display exec --no-startup-id touch xrandr --auto
+bindsym $mod+XF86Display exec --no-startup-id touch xrandr --auto --output DP2 --above eDP1
 
+# Calculator
 bindsym XF86Calculator exec --no-startup-id urxvt -e "python3"
 
-#bindsym $mod+equal exec --no-startup-id amixer sset Master 3+
-#bindsym $mod+minus exec --no-startup-id amixer sset Master 3-
+# Lock
+bindsym $mod+x exec i3lock -t -i ~/Pictures/lock.png
 
+# Screenshot
+bindsym --release $mod+g exec "fn=`date -u +%Y-%m-%d_%H_%M_%S`;scrot -s ~/scrot/$fn.png; firefox --new-window ~/scrot/$fn.png"
 
-bindsym $mod+x exec i3lock -t -i ~/Pictures/lock.png # lock
-bindsym $mod+Shift+x exec troll-lock
-
-bindsym --release $mod+g exec screengrab #scrot
+## i3 Daemons
 exec /usr/local/bin/_batterynag 10 60
