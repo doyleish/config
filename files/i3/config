@@ -155,8 +155,8 @@ exec --no-startup-id xset r rate 250 50
 
 ## Bindings
 # Brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 11
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 11
 
 # Audio
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +3%
@@ -175,7 +175,7 @@ bindsym XF86Calculator exec --no-startup-id urxvt -e "python3"
 bindsym $mod+x exec i3lock -t -i ~/Pictures/lock.png
 
 # Screenshot
-bindsym --release $mod+g exec "fn=`date -u +%Y-%m-%d_%H_%M_%S`;scrot -s ~/scrot/$fn.png; firefox --new-window ~/scrot/$fn.png"
+bindsym --release $mod+g exec "fn=`date -u +%Y-%m-%d_%H_%M_%S`; scrot -s ~/scrot/$fn.png && firefox --new-window ~/scrot/$fn.png"
 
 ## i3 Daemons
-exec /usr/local/bin/_batterynag 10 60
+#exec /usr/local/bin/_batterynag 10 60
