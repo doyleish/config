@@ -6,10 +6,10 @@ call vundle#begin()
   Plugin 'derekwyatt/vim-scala'
   Plugin 'airblade/vim-gitgutter'
   Plugin 'fatih/vim-go'
-  Plugin 'fatih/vim-hclfmt'
   Plugin 'lifepillar/pgsql.vim'
   Plugin 'vim-syntastic/syntastic'
   Plugin 'leafgarland/typescript-vim'
+  Plugin 'hashivim/vim-terraform'
 call vundle#end()
 filetype plugin indent on
 
@@ -32,6 +32,8 @@ au FileType json setl tabstop=2 shiftwidth=2
 au FileType xml setl tabstop=2 shiftwidth=2
 au FileType yaml setl tabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.handlebars, *.hbs setl tabstop=2 shiftwidth=2 syntax=html
+au BufNewFile,BufRead Jenkins* setl tabstop=2 shiftwidth=2 syntax=groovy
+
 
 
 " Folding
@@ -70,6 +72,9 @@ let g:go_auto_type_info = 1
 let g:go_auto_sameids = 1
 let g:go_updatetime = 400
 
+" TF
+let g:terraform_fmt_on_save=1
+
 
 " No arrow key nav
 noremap <Up> <NOP>
@@ -80,3 +85,6 @@ inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
+
+" Bugfix for groovy syntax
+set re=0

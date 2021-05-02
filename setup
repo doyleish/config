@@ -13,8 +13,8 @@ ln -sf $HOME/config/files/gitconfig $HOME/.gitconfig
 ln -sf $HOME/config/files/Xresources $HOME/.Xresources
 
 ## i3 
-mkdir -p $HOME/.config/i3
-ln -sf $HOME/config/files/i3/config $HOME/.config/i3/config
+# mkdir -p $HOME/.config/i3
+# ln -sf $HOME/config/files/i3/config $HOME/.config/i3/config
 
 ## bash
 ln -sf $HOME/config/files/bashrc $HOME/.bashrc

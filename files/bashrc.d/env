@@ -3,8 +3,12 @@ export EDITOR=/usr/bin/vim
 export PATH=$PATH:/opt/go/bin
 export PATH=$PATH:/opt/node/bin
 export PATH=$PATH:/opt/hashicorp
+export PATH=$PATH:/opt/google-cloud-sdk/bin
 export PATH=$PATH:$HOME/go/bin
 
 export VAULT_ADDR=https://vault.corp.gotimagine.com:8200
 
 export IMAGINE_INFRA_SCRIPTS=/home/ryan/staging/infrastructure/scripts
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then . '/opt/google-cloud-sdk/completion.bash.inc'; fi
