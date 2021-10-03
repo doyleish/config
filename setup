@@ -1,25 +1,26 @@
 #!/bin/bash
+SCDIR=$(dirname ${BASH_SOURCE[0]})
+cd $SCDIR
+CFGDIR=$(pwd)
 
 ## set up path 
-mkdir -p $HOME/programs/bin
-mkdir -p $HOME/scratch
 mkdir -p $HOME/.bashrc.d
 mkdir -p $HOME/.Trash
+mkdir -p $HOME/.config/i3
 
 ## link up dotfiles
-ln -sf $HOME/config/files/vim $HOME/.vimrc
-ln -sf $HOME/config/files/tmux $HOME/.tmux.conf
-ln -sf $HOME/config/files/gitconfig $HOME/.gitconfig
-ln -sf $HOME/config/files/Xresources $HOME/.Xresources
-
-## i3 
-# mkdir -p $HOME/.config/i3
-# ln -sf $HOME/config/files/i3/config $HOME/.config/i3/config
+ln -sf $CFGDIR/files/vim $HOME/.vimrc
+ln -sf $CFGDIR/files/tmux $HOME/.tmux.conf
+ln -sf $CFGDIR/files/gitconfig $HOME/.gitconfig
+ln -sf $CFGDIR/files/Xresources $HOME/.Xresources
+ln -sf $CFGDIR/files/i3 $HOME/.config/i3/config
 
 ## bash
-ln -sf $HOME/config/files/bashrc $HOME/.bashrc
-ln -sf $HOME/config/files/bash_profile $HOME/.bash_profile
-ln -sf $HOME/config/files/bashrc.d/* $HOME/.bashrc.d/
+ln -sf $CFGDIR/files/bashrc $HOME/.bashrc
+ln -sf $CFGDIR/files/bash_profile $HOME/.bash_profile
+ln -sf $CFGDIR/files/bashrc.d/* $HOME/.bashrc.d/
 
 ## misc setup
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then 
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
