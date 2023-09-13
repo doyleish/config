@@ -1,6 +1,3 @@
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
-
-# env only
-. ~/bashrc.d/env
+for file in $HOME/.bashrc.d/*; do
+    . $file
+done

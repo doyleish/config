@@ -1,8 +1,12 @@
 [user]
 	email = ryan@rdoyle.net
 	name = Ryan Doyle
+	signingkey = 45F4445CC48898B4!
+[commit]
+    gpgsign = true
 [push]
-	default = simple
+    default = simple
+    autoSetupRemote = true
 [core]
 	editor = vim
-	excludesfile = /Users/ryan.doyle/.gitignore_global
+    excludesfile = /Users/ryan/.gitignore_global

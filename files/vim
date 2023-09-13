@@ -10,6 +10,7 @@ call vundle#begin()
   Plugin 'vim-syntastic/syntastic'
   Plugin 'leafgarland/typescript-vim'
   Plugin 'hashivim/vim-terraform'
+  Plugin 'jlanzarotta/bufexplorer'
 call vundle#end()
 filetype plugin indent on
 
@@ -33,7 +34,6 @@ au FileType xml setl tabstop=2 shiftwidth=2
 au FileType yaml setl tabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.handlebars, *.hbs setl tabstop=2 shiftwidth=2 syntax=html
 au BufNewFile,BufRead Jenkins* setl tabstop=2 shiftwidth=2 syntax=groovy
-
 
 
 " Folding
@@ -72,6 +72,7 @@ let g:go_auto_type_info = 1
 let g:go_auto_sameids = 1
 let g:go_updatetime = 400
 
+
 " TF
 let g:terraform_fmt_on_save=1
 
@@ -86,5 +87,8 @@ inoremap <Down> <NOP>
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
 
+
 " Bugfix for groovy syntax
-set re=0
+" set re=0
+
+":keeppatterns s:<C-R><C-W>:\=substitute(submatch(0), '\(\u\?\l\+\)\(\u\)', '\l\1_\l\2', 'g'):

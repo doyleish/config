@@ -17,47 +17,60 @@ function ps1_currdir {
         prefix=""
     fi
 
-    echo "$prefix$suffix"
+    echo -n "$prefix$suffix"
 }
 
 function ps1_gbranch {
-
-    status=$(git status 2> /dev/null | egrep -m 1 "Changes not staged for commit|Changes to be committed" | sed -e 's|.\+|*|')
-    gbranch=$(git branch 2> /dev/null | cut -d' ' -f2)
-    echo "$status$gbranch$status" | sed -e 's|\(.\+\)|(\1)\ |'
-}
-
-function ps1_git_status {
-    
-    status=$(git status 2> /dev/null)
-    if [ $(echo $status | egrep -c -m 1 "On branch") -lt 1 ]; then
-        exit
-    elif [ $(echo $status | egrep -c -m 1 "Untracked files") -eq 1 ]; then
-        echo "✘+ "
-    elif [ $(echo $status | egrep -c -m 1 "Changes (not staged for commit|to be committed)") -eq 1 ]; then
-        echo "✘ "
-    else
-        echo "✔ "
+    gbranch=$(git branch --show-current 2> /dev/null)
+    if [ $? != 0 ]; then
+        return
     fi
-    
+    status=$(git status -s 2> /dev/null)
+    untracked=""
+    changed=""
+    ok="✔"
+    if [ $(echo $status | egrep -c -m 1 '\?\? ') -eq 1 ]; then
+        untracked="?"
+        ok=""
+    fi
+    if [ $(echo $status | egrep -c -m 1 'M ') -eq 1 ]; then
+        changed="M"
+        ok=""
+    fi
+    color=$green
+    #echo -en '\033[34m'
+    if [ "$gbranch" == "main" ] || [ "$gbranch" == "master" ]; then
+        #echo -en '\033[32m'
+        color=$red
+    fi
+    echo -en "\001$color\002($untracked$changed$ok $gbranch)\001$reset\002 "
 }
 
 function ps1_exit {
     prev_exit=$?
     if [ $prev_exit -ne 0 ]; then
-        echo "[$prev_exit]"
+        echo -n "[$prev_exit]"
     else
-        echo ""
+        return 
     fi
 }
 
 function ps1_go_env {
     if [ -z "$GOPATH" ]; then
-        echo ""
+        return 
     else
         output=$(echo $GOPATH | rev | cut -d'/' -f1 | rev)
-        echo "($output)"
+        echo -n "($output)"
     fi
 }
 
-export PS1="\[$red\]\$(ps1_exit)\[$reset\]\[$yellow\]\$(ps1_go_env)\[$reset\]\[$cyan\][\A]\[$reset\] \u@\h \$(ps1_git_status)\$(ps1_currdir) $> "
+function ps1_aws_env {
+    if [ -z "$AWS_REGION" ]; then
+        return 
+    else
+        output=$(echo "$AWS_VAULT$AWS_PROFILE:$AWS_REGION")
+        echo -n "($output)"
+    fi
+}
+
+export PS1="\[$red\]\$(ps1_exit)\[$reset\]\[$cyan\][\A]\[$reset\]\[$yellow\]\$(ps1_aws_env)\$(ps1_go_env)\[$reset\] \u@\h \[$green\]\$(ps1_gbranch)\[$reset\]\$(ps1_currdir) $> "
