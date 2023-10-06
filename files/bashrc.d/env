@@ -1,15 +1,14 @@
 export EDITOR=/usr/bin/vim
 
-export PATH=$PATH:$HOME/go/bin
-
-export PATH=$PATH:/opt/bin
-
-# brew tools
-export PATH=/opt/homebrew/bin:$PATH
-
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PATH:$PYENV_ROOT/bin"
+
+# Path
+export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:/opt/bin
+export PATH=/opt/homebrew/bin:$PATH
+export PATH=$PATH:$PYENV_ROOT/bin
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
