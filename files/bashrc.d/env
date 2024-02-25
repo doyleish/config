@@ -6,7 +6,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 # Path
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:/opt/bin
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=$PATH:$PYENV_ROOT/bin
 

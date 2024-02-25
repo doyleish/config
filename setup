@@ -12,8 +12,8 @@ mkdir -p $HOME/.config/i3
 ln -sf $CFGDIR/files/vim $HOME/.vimrc
 ln -sf $CFGDIR/files/tmux $HOME/.tmux.conf
 ln -sf $CFGDIR/files/gitconfig $HOME/.gitconfig
-ln -sf $CFGDIR/files/Xresources $HOME/.Xresources
-ln -sf $CFGDIR/files/i3 $HOME/.config/i3/config
+# ln -sf $CFGDIR/files/Xresources $HOME/.Xresources
+# ln -sf $CFGDIR/files/i3 $HOME/.config/i3/config
 
 ## bash
 ln -sf $CFGDIR/files/bashrc $HOME/.bashrc
