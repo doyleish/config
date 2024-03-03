@@ -1,11 +1,29 @@
 #!/bin/bash
-if [ "$EUID" -ne 0 ]; then
-    echo "Run me as root"
-    exit 1
-fi
 
-# update tlp for battery gains
-# install dkms, build tools, headers
-# install wifi firmware
+debian(){
+    # update tlp for battery gains
+    # install dkms, build tools, headers
+    # install wifi firmware
+    apt-get install -y throttled build-essential make gcc dkms tlp tp-smapi-dkms acpi-call firmware-iwlwifi mesa-utils linux-headers-$(uname -r|sed 's,[^-]*-[^-]*-,,')
+}
 
-apt-get install -y throttled rxvt-unicode build-essential make gcc tmux dkms tlp tp-smapi-dkms acpi-call firmware-iwlwifi apt-file mesa-utils linux-headers-$(uname -r|sed 's,[^-]*-[^-]*-,,')
+gentoo(){
+    # genkernel created recovery
+    # efibootmgr --create --disk /dev/nvme0n1 --part 1 --label "gentoo" --loader "\EFI\gentoo\bzImage.efi" -u "crypt_root=UUID=a6c1b0a1-1e68-4705-afcf-f046b40a7f8b root=UUID=955e7da9-0296-466c-b180-bd5d83027693 root_trim=yes rw initrd=\EFI\gentoo\initramfs-6.6.13-gentoo"
+    
+    emerge --ask sys-firmware/sof-firmware sys-firmware/linux-firmware
+
+    pushd /usr/src/linux
+    make && make modules_install
+    mkdir -p /efi/EFI/gentoo
+    cp System.map /boot/System.map
+    cp arch/x86_64/boot/bzImage /efi/EFI/gentoo/bzImage.efi
+
+    dracut --force /efi/EFI/gentoo/initramfs-gentoo
+    popd
+
+    # dracut test slot
+    efibootmgr --create --disk /dev/nvme0n1 --part 1 --label "gentoo-test" --loader "\EFI\gentoo-test\bzImage.efi" -u "rd.luks.uuid=a6c1b0a1-1e68-4705-afcf-f046b40a7f8b rd.luks.name=a6c1b0a1-1e68-4705-afcf-f046b40a7f8b=root rd.luks.allow-discards rootfstype=btrfs root=UUID=955e7da9-0296-466c-b180-bd5d83027693 rw initrd=\EFI\gentoo-test\initramfs-gentoo"
+    # dracut, main kernel
+    efibootmgr --create --disk /dev/nvme0n1 --part 1 --label "gentoo" --loader "\EFI\gentoo\bzImage.efi" -u "rd.luks.uuid=a6c1b0a1-1e68-4705-afcf-f046b40a7f8b rd.luks.name=a6c1b0a1-1e68-4705-afcf-f046b40a7f8b=root rd.luks.allow-discards rootfstype=btrfs root=UUID=955e7da9-0296-466c-b180-bd5d83027693 rw initrd=\EFI\gentoo\initramfs-gentoo"
+}
