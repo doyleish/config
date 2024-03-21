@@ -1,17 +1,36 @@
 export EDITOR=/usr/bin/vim
 
+# Path
+#================
+# Deferred Paths
+# home .local
+export PATH=$PATH:$HOME/.local/bin
+
+# homebin
+export PATH=$PATH:$HOME/bin
+
+# opt
+export PATH=$PATH:/opt/bin
+
+# pyenv
+export PATH="$PATH:$PYENV_ROOT/bin"
+
+# Preferred Paths
+# Brew
+export PATH=/opt/homebrew/bin:$PATH
+
+# Deno
+export PATH="$HOME/.deno/bin:$PATH"
+
+# Go pkg
+export PATH=$HOME/go/bin:$PATH
+#================
+
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 
-# Path
-export PATH=$PATH:$HOME/go/bin
-export PATH=$PATH:$HOME/.local/bin
-export PATH=/opt/homebrew/bin:$PATH
-export PATH=$PATH:$PYENV_ROOT/bin
-
 # NVM
 export NVM_DIR="$HOME/.nvm"
-
 BREW_PREFIX=/opt/homebrew
 [ -s "$BREW_PREFIX/opt/nvm/nvm.sh" ] && . "$BREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
 [ -s "$BREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && . "$BREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
