@@ -6,10 +6,16 @@ green=$(tput setaf 2)
 yellow=$(tput setaf 3)
 cyan=$(tput setaf 6)
 blue=$(tput setaf 4)
+bold=$(tput bold)
 reset=$(tput sgr0)
 
 function ps1_k8s_context {
-    kubectl config current-context | cut -d/ -f1
+    K8S_CONTEXT=$(kubectl config current-context | cut -d/ -f1)
+    if [ -z "$K8S_CONTEXT" ]; then
+        return 
+    else
+        echo -n "(k8s:$K8S_CONTEXT)"
+    fi
 }
 
 function ps1_currdir {
@@ -61,25 +67,16 @@ function ps1_exit {
     fi
 }
 
-function ps1_go_env {
-    if [ -z "$GOPATH" ]; then
-        return 
-    else
-        output=$(echo $GOPATH | rev | cut -d'/' -f1 | rev)
-        echo -n "($output)"
-    fi
-}
-
 function ps1_aws_env {
     if [ -z "$AWS_REGION" ]; then
         return 
     else
-        output=$(echo "$AWS_VAULT$AWS_PROFILE:$AWS_REGION")
-        echo -n "($output)"
+        output=$(echo "$AWS_VAULT$AWS_PROFILE" | sed -e 's/[cC]onstellation-//')
+        echo -n "(aws:$output)"
     fi
 }
 
-export PS1="\[$red\]\$(ps1_exit)\[$reset\]\[$cyan\][\A]\[$reset\]\[$blue\](\$(ps1_k8s_context))\[$reset\]\[$yellow\]\$(ps1_aws_env)\$(ps1_go_env)\[$reset\] \u@\h \[$green\]\$(ps1_gbranch)\[$reset\]\$(ps1_currdir) $> "
+export PS1="\[$red\]\$(ps1_exit)\[$reset\]\[$cyan\][\A]\[$reset\]\[$blue\]\$(ps1_k8s_context)\[$reset\]\[$yellow\]\$(ps1_aws_env)\[$reset\] \[$bold\]\u\[$reset\]@\[$bold\]\h\[$reset\] \[$green\]\$(ps1_gbranch)\[$reset\]\$(ps1_currdir) \[$bold\]$>\[$reset\] "
 
 # Aliases and Functions
 #Util Options 
