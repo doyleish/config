@@ -10,7 +10,7 @@ bold=$(tput bold)
 reset=$(tput sgr0)
 
 function ps1_k8s_context {
-    K8S_CONTEXT=$(kubectl config current-context | cut -d/ -f1)
+    K8S_CONTEXT=$(kubectl config current-context 2>/dev/null| cut -d/ -f1)
     if [ -z "$K8S_CONTEXT" ]; then
         return 
     else
@@ -68,7 +68,7 @@ function ps1_exit {
 }
 
 function ps1_aws_env {
-    if [ -z "$AWS_REGION" ]; then
+    if [ -z "$AWS_PROFILE" ]; then
         return 
     else
         output=$(echo "$AWS_VAULT$AWS_PROFILE" | sed -e 's/[cC]onstellation-//')
@@ -146,6 +146,6 @@ alias assume=". assume"
 # NVM
 # ===Start===
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" || echo -n ""  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" || echo -n ""  # This loads nvm bash_completion
 # ====End====
