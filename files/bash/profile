@@ -6,6 +6,7 @@ export EDITOR=/usr/bin/vim
 # home .local
 export PATH=$PATH:$HOME/.local/bin
 
+
 # homebin
 export PATH=$PATH:$HOME/bin
 
@@ -15,7 +16,17 @@ export PATH=$PATH:/opt/bin
 # pyenv
 export PATH="$PATH:$PYENV_ROOT/bin"
 
+# Foundry
+export PATH="$PATH:/Users/ryan/.foundry/bin"
+
 # Preferred Paths
+# PNPM
+export PNPM_HOME="/Users/ryan/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
+# Docker Desktop for Mac
+export PATH="/Applications/Docker.app/Contents/Resources/bin:$PATH"
+
 # Brew
 export PATH=/opt/homebrew/bin:$PATH
 
@@ -24,13 +35,16 @@ export PATH="$HOME/.deno/bin:$PATH"
 
 # Go pkg
 export PATH=$HOME/go/bin:$PATH
+
+# Foundry
+export PATH=$HOME/.foundry/bin:$PATH
+
+# kubectl krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 #================
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-BREW_PREFIX=/opt/homebrew
-[ -s "$BREW_PREFIX/opt/nvm/nvm.sh" ] && . "$BREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
-[ -s "$BREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && . "$BREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+# Rust
+. "$HOME/.cargo/env"

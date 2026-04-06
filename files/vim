@@ -25,17 +25,6 @@ set shiftwidth=4
 set incsearch
 set hlsearch
 
-
-" Filetype specifics
-au FileType html setl tabstop=2 shiftwidth=2
-au FileType javascript setl tabstop=2 shiftwidth=2
-au FileType json setl tabstop=2 shiftwidth=2
-au FileType xml setl tabstop=2 shiftwidth=2
-au FileType yaml setl tabstop=2 shiftwidth=2
-au BufNewFile,BufRead *.handlebars, *.hbs setl tabstop=2 shiftwidth=2 syntax=html
-au BufNewFile,BufRead Jenkins* setl tabstop=2 shiftwidth=2 syntax=groovy
-
-
 " Folding
 set foldmethod=indent
 set foldlevel=99
@@ -62,8 +51,6 @@ nnoremap <space> za
 " let python_highlight_all=1
 syntax on
 set background=dark
-" Let the rxvt colors do their thing
-" colorscheme solarized
 
 
 " Go
@@ -71,10 +58,6 @@ set omnifunc=syntaxcomplete#Complete
 let g:go_auto_type_info = 1
 let g:go_auto_sameids = 1
 let g:go_updatetime = 400
-
-
-" TF
-let g:terraform_fmt_on_save=1
 
 
 " No arrow key nav
@@ -86,9 +69,3 @@ inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
-
-
-" Bugfix for groovy syntax
-" set re=0
-
-":keeppatterns s:<C-R><C-W>:\=substitute(submatch(0), '\(\u\?\l\+\)\(\u\)', '\l\1_\l\2', 'g'):
