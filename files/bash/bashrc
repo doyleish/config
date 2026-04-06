@@ -55,7 +55,7 @@ function ps1_gbranch {
         #echo -en '\033[32m'
         color=$red
     fi
-    echo -en "\001$color\002($untracked$changed$ok $gbranch)\001$reset\002 "
+    echo -en " \001$color\002($untracked$changed$ok $gbranch)\001$reset\002"
 }
 
 function ps1_exit {
@@ -76,9 +76,29 @@ function ps1_aws_env {
     fi
 }
 
-export PS1="\[$red\]\$(ps1_exit)\[$reset\]\[$cyan\][\A]\[$reset\]\[$blue\]\$(ps1_k8s_context)\[$reset\]\[$yellow\]\$(ps1_aws_env)\[$reset\] \[$bold\]\u\[$reset\]@\[$bold\]\h\[$reset\] \[$green\]\$(ps1_gbranch)\[$reset\]\$(ps1_currdir) \[$bold\]$>\[$reset\] "
+function ps1_linebreak {
+    if [ "$PS_TWOLINE" == "true" ]; then
+        echo
+        echo -n " └─"
+    else
+        return
+    fi
+}
+
+export PS1="\[$red\]\$(ps1_exit)\[$reset\]\[$cyan\][\A]\[$reset\]\[$blue\]\$(ps1_k8s_context)\[$reset\]\[$yellow\]\$(ps1_aws_env)\[$reset\] \[$bold\]\u\[$reset\]@\[$bold\]\h\[$reset\]\[$green\]\$(ps1_gbranch)\[$reset\] \$(ps1_currdir)\$(ps1_linebreak) \[$bold\]$>\[$reset\] "
 
 # Aliases and Functions
+#PS1
+alias oneline="unset PS_TWOLINE"
+alias twoline="export PS_TWOLINE=true"
+function lines {
+    if [ -z "$PS_TWOLINE" ]; then
+        export PS_TWOLINE=true
+    else
+        unset PS_TWOLINE
+    fi
+}
+
 #Util Options 
 # ===Start===
 if [ `uname | grep -c Linux` == 0 ]; then
