@@ -4,7 +4,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
   Plugin 'VundleVim/Vundle.vim'
   Plugin 'derekwyatt/vim-scala'
-  Plugin 'airblade/vim-gitgutter'
   Plugin 'fatih/vim-go'
   Plugin 'lifepillar/pgsql.vim'
   Plugin 'vim-syntastic/syntastic'
